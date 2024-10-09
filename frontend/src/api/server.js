@@ -1,7 +1,10 @@
-// fronted/src/api/server
+// fronted/src/api/server.js
+// { someFunction } from './api/server.js';  // הוסף את הסיומת .js
+
+
 import axios from "axios";
 
-export const login = (values) => {
+export const Login = (values) => {
     return new Promise((resolve, reject) => {
         axios
             .post("/login", values)
@@ -14,7 +17,7 @@ export const login = (values) => {
     });
 };
 
-export const changepass = (values) => {
+export const Changepass = (values) => {
     return new Promise((resolve, reject) => {
         axios
             .post("/Changepass", values)
@@ -27,7 +30,7 @@ export const changepass = (values) => {
     });
 };
 
-export const signup = (values) => {
+export const Signup = (values) => {
     return new Promise((resolve, reject) => {
         axios
             .post("/Signup", values)
@@ -40,7 +43,7 @@ export const signup = (values) => {
     });
 };
 
-export const continuresett = (values) => {
+export const Continuresett = (values) => {
     return new Promise((resolve, reject) => {
         axios
             .post("/continu-reset", values)
@@ -53,7 +56,7 @@ export const continuresett = (values) => {
     });
 };
 
-export const showusers2 = (values) => {
+export const ShowUsers2 = (values) => {
     return new Promise((resolve, reject) => {
         axios
             .post("/ShowUsers2", values)

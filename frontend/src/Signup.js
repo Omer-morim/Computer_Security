@@ -1,9 +1,12 @@
 // fronted/src/Signup
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { signup } from './api/server.js';
+import { Signup as signupApi } from './api/server.js';
+import validation2 from './ValidationFolder/SignupValidation.js';
+import { ToastContainer, toast } from 'react-toastify';
 
-function Signup() {
+
+function Signup(){
     const [values, setValues] = useState({
         username: '',
         email: '',
@@ -30,7 +33,7 @@ function Signup() {
             error.password = 'Password should not be empty';
         }
         if (Object.keys(error).length === 0) {
-            signup(values)
+            signupApi(values)
                 .then((res) => {
                     navigate('/');
                     console.log('User signed up successfully');
@@ -69,7 +72,7 @@ function Signup() {
                     </div>
 
                     <div className='mb-3'>
-                        <label htmlFor='password'><strong>Email</strong></label>
+                        <label htmlFor='password'><strong>password</strong></label>
                         <input type='password' placeholder='Enter password' name='password'
                                onChange={handleInput} className='form-control rounded-0'/>
                         {errors.email && <span className='text-danger'> {errors.password} </span>}

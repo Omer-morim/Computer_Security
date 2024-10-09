@@ -9,6 +9,10 @@ function validation(values) {
         error.id = "ID should not be empty";
     }
 
+    // Name validation
+    if (!values.name || values.name === "") {
+        error.name = "Name should not be empty";
+    }
     // Email validation
     // const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Uncomment if email pattern validation is needed
 

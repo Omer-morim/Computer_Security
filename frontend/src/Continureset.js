@@ -2,8 +2,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import validation from './ValidationFolder/ContinureserValidation.js';
-import { continuresett } from './api/server.js';
-
+import { Continuresett  } from './api/server.js';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function Continureset() {
@@ -27,7 +27,7 @@ function Continureset() {
         setErrors(err);
 
         if (err.password === '' && err.email === '') {
-          continuresett(values)
+         Continuresett(values)
             .then((res) => {
               alert('Password reset successful');
               navigate('/');

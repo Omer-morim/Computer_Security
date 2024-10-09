@@ -5,7 +5,7 @@ const {sendQuery } = require('../api/mysql');
 const loginRouter = express.Router();
 //const validator = require('validator');
 
-loginRouter.post("/login", async (req, res) => {
+loginRouter.post("/Login", async (req, res) => {
   try {
     const { email, password } = req.body;
 

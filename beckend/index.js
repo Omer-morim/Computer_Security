@@ -5,12 +5,12 @@ const { connectDb, sendQueryCommit, sendQuery } = require("./src/api/mysql");
 const { hashPassword } = require("./src/util/bcrypt");
 const resetPasswordRouter = require("./src/routes/reset-password");
 const loginRouter = require("./src/routes/log-in");
-const continuresettRouter = require("./src/routes/continu-reset");
+const continuresetRouter = require("./src/routes/continu-reset");
 const changepassRouter = require("./src/routes/change-pass");
 const showusers2Router = require("./src/routes/ShowUsers2");
 const PORT = 8082;
-//const validator = require('validator');
-//const helmet = require("helmet"); //Helmet helps prevent XSS (Cross-Site Scripting) attacks by setting a Content Security Policy header.
+const validator = require('validator');
+const helmet = require("helmet"); //Helmet helps prevent XSS (Cross-Site Scripting) attacks by setting a Content Security Policy header.
 
 const app = express();
 //app.use(helmet());
@@ -18,7 +18,7 @@ app.use(cors());
 app.use(express.json());
 app.use("", resetPasswordRouter);
 app.use("", loginRouter);
-app.use("", continuresettRouter);
+app.use("", continuresetRouter);
 app.use("", changepassRouter);
 app.use("", showusers2Router);
 

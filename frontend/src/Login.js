@@ -2,7 +2,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import validation from './ValidationFolder/LoginValidation.js';
-import { login } from './api/server.js';
+import { Login as login } from './api/server.js';
+import validation2 from './ValidationFolder/LoginValidation.js';
+import { ToastContainer, toast } from 'react-toastify';
 
 function Login() {
   const [values, setValues] = useState({

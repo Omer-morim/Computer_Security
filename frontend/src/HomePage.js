@@ -1,10 +1,9 @@
 // frontend/src/HomePage
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { signup } from './api/server.js';
+import { Signup } from './api/server.js';  // שינה את השם של הייבוא מ-api/server
 import 'react-toastify/dist/ReactToastify.css';
-//import validation2 from './ValidationFolder/SignupValidation.js';
-//import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -36,7 +35,7 @@ function HomePage() {
             error.password = "Password should not be empty";
         }
         if (Object.keys(error).length === 0) {
-            signup(values)
+            Signup (values)
                 .then(res => {
                     setSignupResult(res);
                 })

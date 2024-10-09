@@ -2,7 +2,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import validation from './ValidationFolder/ShowValidation.js';
-import { showusers2 } from './api/server.js';
+import { ShowUser2  } from './api/server.js';
+import validation2 from './ValidationFolder/ShowValidation.js';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function ShowUsers() {
@@ -25,7 +27,7 @@ function ShowUsers() {
         setErrors(err);
     
         if (err.name === ''  && err.email=== '' ) {
-            showusers2(values)
+            ShowUsers(values)
             .then(res => {
              if (res.data.length === 0) {
                 alert('User not found in the database');
@@ -50,7 +52,7 @@ function ShowUsers() {
 
       const handleShowAll = () => {
         // Handle "Show all user" button click
-        showusers2({})
+          ShowUsers({})
           .then((res) => {
             if (res.data.length === 0) {
               // No users found in the database

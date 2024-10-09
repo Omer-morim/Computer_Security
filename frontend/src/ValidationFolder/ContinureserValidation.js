@@ -39,10 +39,8 @@ function validation(values){
             if (type === "number" && /[0-9]/.test(values.password)) {
                 return true;
             }
-            if (type === "special" && /[^a-zA-Z0-9]/.test(values.password)) {
-                return true;
-            }
-            return false;
+            return type === "special" && /[^a-zA-Z0-9]/.test(values.password);
+
         }).length;
 
         if (characterTypeCount < requiredCharacterTypes) {

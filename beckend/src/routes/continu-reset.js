@@ -3,9 +3,9 @@ const express = require('express');
 const {sendQuery , sendQueryCommit2 } = require('../api/mysql');
 const { hashPassword, comparePassword } = require('../util/bcrypt');
 const validator = require('validator');
-const continuresettRouter = express.Router();
+const continuresetRouter = express.Router();
 
-continuresettRouter.post('/continu-reset', async (req, res) => {
+continuresetRouter.post('/continu-reset', async (req, res) => {
   try {
     const email= (req.body.email);
     const code=validator.escape( req.body.code);
@@ -50,4 +50,4 @@ continuresettRouter.post('/continu-reset', async (req, res) => {
   }
 });
 
-module.exports = continuresettRouter;
+module.exports = continuresetRouter;

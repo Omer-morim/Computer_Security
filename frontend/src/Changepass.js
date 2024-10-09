@@ -1,9 +1,13 @@
 // fronted/src/Changepass
 import React, { useState } from 'react'
 import {  useNavigate } from 'react-router-dom'
-import validation from './ValidationFolder/ChangepassValidation.js';
-import { changepass } from './api/server.js';
+import validation2 from './ValidationFolder/ChangepassValidation.js';
+import validation from './ValidationFolder/ContinureserValidation.js';
+
+import { ToastContainer, toast } from 'react-toastify';
+import { Changepass as changepass } from './api/server.js';  // ודא שהפונקציה מיובאת אם היא מוגדרת בשרת
 import { Link } from 'react-router-dom';
+
 
 function Changepass() {
     const [values,setValues]= useState({
@@ -21,7 +25,7 @@ function Changepass() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const err = validation(values);
+        const err = validation2(values);
         setErrors(err);
       
         if (err.email === '' && err.password1 === '' && err.password2 === '') {

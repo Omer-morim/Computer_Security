@@ -1,5 +1,6 @@
-// fronted/src/ValidationFolder/SingupValidation
+// fronted/src/ValidationFolder/SignupValidation
 import passwordPolicyConfig from './config.json';
+//import { Signup as signupApi } from './api/server';
 
 function validation2(values) {
     let error = {};

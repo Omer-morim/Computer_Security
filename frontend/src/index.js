@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.js';  // הוספנו את סיומת .js
 import reportWebVitals from './reportWebVitals.js';  // הוספנו את סיומת .js
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

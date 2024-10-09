@@ -1,8 +1,9 @@
 // fronted/src/Resetpassword
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import validation from './ValidationFolder/Resetvalidation.js';
-
+import validation2 from './ValidationFolder/Resetvalidation.js';
+import { ToastContainer, toast } from 'react-toastify';
+import { Changepass as changepass } from './api/server.js';
 function Resetpassword() {
 
     const [values,setValues]= useState({
@@ -17,12 +18,12 @@ function Resetpassword() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const err = validation(values);
+        const err = (values);
         setErrors(err);
     
         if (err.email === '') {
             try {
-                const response = await fetch('http://localhost:8082/api/reset-password.js', {
+                const response = await fetch('http://localhost:8082/api/reset-password', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

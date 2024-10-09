@@ -1,4 +1,5 @@
-// backend/src/routes/showusers2.js
+// backend/src/routes/ShowUsers2.js
+import { ShowUser2 } from './api/server.js';
 const express = require("express");
 const { sendQueryCommit } = require('../api/mysql');
 const showusers2Router = express.Router();

@@ -4,7 +4,7 @@ const router = express.Router();
 const generateRandomToken = require('../util/token');
 const nodemailer = require('nodemailer');
 const { sendQuery } = require('../api/mysql');
-// const validator = require('validator');
+ const validator = require('validator');
 
 const resetTokens = {};
 
